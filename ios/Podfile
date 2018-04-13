@@ -1,0 +1,31 @@
+# Uncomment the next line to define a global platform for your project
+platform :ios, '9.0'
+
+target 'petbook' do
+  # Uncomment the next line if you're using Swift or would like to use dynamic frameworks
+  # use_frameworks!
+  pod 'Firebase/Core'
+  pod 'Firebase/Auth'
+  pod 'Firebase/Firestore'
+  pod 'Firebase/Storage'
+  # Pods for petbook
+
+  target 'petbookTests' do
+    inherit! :search_paths
+    # Pods for testing
+  end
+
+end
+
+target 'petbook-tvOS' do
+  # Uncomment the next line if you're using Swift or would like to use dynamic frameworks
+  # use_frameworks!
+
+  # Pods for petbook-tvOS
+
+  target 'petbook-tvOSTests' do
+    inherit! :search_paths
+    # Pods for testing
+  end
+
+end

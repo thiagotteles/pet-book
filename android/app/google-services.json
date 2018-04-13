@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "435055076998",
+    "firebase_url": "https://tagworks-petbook.firebaseio.com",
+    "project_id": "tagworks-petbook",
+    "storage_bucket": "tagworks-petbook.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:435055076998:android:cb4133faed1327c8",
+        "android_client_info": {
+          "package_name": "br.com.tagworks.petbook"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "435055076998-rt1all1hojbiu82apqsjlh5t2bf8l8h0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBDNLotS9Zn0xEV1I846wS20IG7uYKI1NU"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
