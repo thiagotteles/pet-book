@@ -7,6 +7,7 @@ import { salvarPerfil, salvarFotoPerfil } from '../../../actions/AuthActions';
 import RNFetchBlob from 'react-native-fetch-blob';
 import ImagePicker from 'react-native-image-crop-picker';
 import ModalDropdown from 'react-native-modal-dropdown';
+import DatePicker from 'react-native-datepicker'
 
 const data = [
     {
@@ -33,7 +34,8 @@ class FormEditarPerfil extends Component {
             modalVisible: false,
             petNome: '',
             petGenero: 'Selecione o gênero do pet',
-            petRaca: ''
+            petRaca: '',
+            date: ""
         }
     }
 
@@ -219,7 +221,7 @@ class FormEditarPerfil extends Component {
                     </View>
                     <View style={{ flexDirection: 'column', alignItems: 'flex-start', borderTopColor: '#e8e8e8', borderTopWidth: 1 }} >
                         <View style={{ flexDirection: 'row', margin: 10 }}>
-                            <View style={{ flex: 1, height: 30, justifyContent: 'center' }}>
+                            <View style={{ flex: 1, height: 40, justifyContent: 'center' }}>
                                 <Text>Nome</Text>
                             </View>
                             <View style={{ flex: 3 }}>
@@ -237,7 +239,7 @@ class FormEditarPerfil extends Component {
                             </View>
                         </View>
                         <View style={{ flexDirection: 'row', margin: 10 }}>
-                            <View style={{ flex: 1, height: 30, justifyContent: 'center' }}>
+                            <View style={{ flex: 1, height: 40, justifyContent: 'center' }}>
                                 <Text>Bio</Text>
                             </View>
                             <View style={{ flex: 3 }}>
@@ -294,7 +296,7 @@ class FormEditarPerfil extends Component {
 
                             <View style={{ flexDirection: 'column', alignItems: 'flex-start', borderTopColor: '#e8e8e8', borderTopWidth: 1 }} >
                                 <View style={{ flexDirection: 'row', margin: 10 }}>
-                                    <View style={{ flex: 1, height: 30, justifyContent: 'center' }}>
+                                    <View style={{ flex: 1, height: 40, justifyContent: 'center' }}>
                                         <Text>Nome</Text>
                                     </View>
                                     <View style={{ flex: 3 }}>
@@ -312,10 +314,10 @@ class FormEditarPerfil extends Component {
                                     </View>
                                 </View>
                                 <View style={{ flexDirection: 'row', margin: 10 }}>
-                                    <View style={{ flex: 1, height: 30, justifyContent: 'center' }}>
+                                    <View style={{ flex: 1, height: 40, justifyContent: 'center' }}>
                                         <Text>Gênero</Text>
                                     </View>
-                                    <View style={{ flex: 3, height: 30, justifyContent: 'center' }}>
+                                    <View style={{ flex: 3, height: 40, justifyContent: 'center' }}>
                                         <ModalDropdown defaultValue={this.state.petGenero}
                                             dropdownStyle={{
                                                 flex: 1,
@@ -326,13 +328,14 @@ class FormEditarPerfil extends Component {
                                                 borderWidth: 1,
                                                 borderRadius: 3,
                                             }}
+
                                             onSelect={(index, value) => this._changeGenero(index, value)}
                                             options={['Macho', 'Fêmea']} />
                                     </View>
 
                                 </View>
                                 <View style={{ flexDirection: 'row', margin: 10 }}>
-                                    <View style={{ flex: 1, height: 30, justifyContent: 'center' }}>
+                                    <View style={{ flex: 1, height: 40, justifyContent: 'center' }}>
                                         <Text>Raça</Text>
                                     </View>
                                     <View style={{ flex: 3 }}>
@@ -346,6 +349,38 @@ class FormEditarPerfil extends Component {
                                             value={this.state.petRaca}
                                             placeholder='Raça do pet'
                                             onChangeText={texto => this._changeRacaPet(texto)}
+                                        />
+                                    </View>
+                                </View>
+                                <View style={{ flexDirection: 'row', margin: 10 }}>
+                                    <View style={{ flex: 1, height: 40, justifyContent: 'center' }}>
+                                        <Text>Nascimento</Text>
+                                    </View>
+                                    <View style={{ flex: 3 }}>
+                                        <DatePicker
+
+                                            date={this.state.date}
+                                            mode="date"
+                                            placeholder="Data de nascimento"
+                                            format="DD/MM/YYYY"
+                                            confirmBtnText="Selecionar"
+                                            cancelBtnText="Cancelar"
+                                            customStyles={{
+                                                dateIcon: {
+                                                    display: 'none',
+                                                    right: 0
+                                                },
+                                                dateInput: {
+                                                    borderWidth: 0,
+                                                    height: 40,
+                                                    left: 0
+                                                },
+                                                btnTextText: {
+                                                    color: 'red'
+                                                }
+                                                // ... You can check the source to find the other keys.
+                                            }}
+                                            onDateChange={(date) => { this.setState({ date: date }) }}
                                         />
                                     </View>
                                 </View>
